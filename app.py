@@ -8,6 +8,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
+apollo_account = input('請輸入 Apollo 帳號： ')
+apollo_password = input('請輸入 Apollo 密碼： ')
 start_date = input('輸入開始打卡日期 (格式：YYYY/MM/DD)： ')
 end_date = input('輸入結束打卡日期 (格式：YYYY/MM/DD)： ')
 
@@ -41,11 +43,11 @@ def run_webdriver():
 
   # 輸入帳號
   username = driver.find_element(By.NAME, "userName")
-  username.send_keys("ken.kuo@alphacamp.co")
+  username.send_keys(apollo_account)
 
   # 輸入密碼
   password = driver.find_element(By.NAME, "password")
-  password.send_keys("RTYfgh33")
+  password.send_keys(apollo_password)
 
   # 點擊登入
   login_btn = driver.find_element(By.CSS_SELECTOR, ".loginform > .submit-btn")
