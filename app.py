@@ -40,11 +40,11 @@ def run_webdriver():
 
   # 啟動登入流程
 
-  # 輸入帳號
+  # 帶入帳號
   username = driver.find_element(By.NAME, "userName")
   username.send_keys(apollo_account)
 
-  # 輸入密碼
+  # 帶入密碼
   password = driver.find_element(By.NAME, "password")
   password.send_keys(apollo_password)
 
@@ -64,8 +64,6 @@ def run_webdriver():
   # 開始申請忘打卡
 
   dates = get_workdays(start_date, end_date)
-
-
   apply_btn = driver.find_element(By.CSS_SELECTOR, ".apply-punchin-bar > .ta_btn")
 
   for date in dates:
@@ -103,13 +101,12 @@ def run_webdriver():
       actions = ActionChains(driver)
 
       # 輸入新日期
-      actions.move_to_element(date_input)  # 將鼠標移動到日期輸入框
+      actions.move_to_element(date_input)  # 將滑鼠移動到日期輸入框
       actions.click()  # 點擊輸入框
       actions.send_keys(date)  # 輸入新日期
-      actions.perform()  # 執行這些操作
+      actions.perform()  # 執行
 
       # 選取類型（上班/下班）
-      # type_dropdown = driver.find_element(By.CSS_SELECTOR, "form.form-horizontal.new.forgetPunch .Select--single.is-searchable")
       type_dropdown = WebDriverWait(driver, 5).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "form.form-horizontal.new.forgetPunch .Select--single.is-searchable"))
       )  
@@ -121,16 +118,15 @@ def run_webdriver():
       time.sleep(1)
 
       # 選取地點（又米）
-      # location_dropdown = driver.find_element(By.CSS_SELECTOR, "form.form-horizontal.new.forgetPunch div[data-reactid='.0.0.1.3.0.1.1.2:$/=10.0.0.1.0.1.3.0.1.0.0.4.1.0.0.1']")
       location_dropdown = WebDriverWait(driver, 5).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "form.form-horizontal.new.forgetPunch div[data-reactid='.0.0.1.3.0.1.1.2:$/=10.0.0.1.0.1.3.0.1.0.0.4.1.0.0.1']"))
       )  
       location_dropdown.click()
+
       location_option = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//div[@class='Select-menu-outer']//div[contains(@class,'Select-option')][1]"))
       )
       location_option.click()
-      # time.sleep(1)
 
       # 點選確定，送出申請
       submit_btn = driver.find_element(By.CSS_SELECTOR, "form.form-horizontal.new.forgetPunch .new__btn--fixed-height")
