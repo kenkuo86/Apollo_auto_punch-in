@@ -21,9 +21,10 @@ Apollo_auto_punch-in 是一款旨在簡化補打卡申請流程的自動化工�
 - 目前未經測試的情境包括：在已有打卡記錄的日子申請補打卡。
 
 ## 安裝和設定
-1. **下載程式**：若您不熟悉使用 Git，可直接從 GitHub 頁面下載程式的壓縮檔，並解壓縮至您的電腦。
+1. **下載程式**：若您不熟悉使用 Git，可直接從 GitHub 頁面下載程式的壓縮檔，並解壓縮至您的電腦。![截圖 2023-12-21 下午8 21 24](https://github.com/kenkuo86/Apollo_auto_punch-in/assets/30885571/d3ac6e9d-48d2-4968-bd28-a1d0b70f8fe2)
 2. **打開終端機**：在您的 Mac 上，可通過「啟動台」或「Spotlight」搜尋來打開「終端機」。
-3. **運行程式**：在終端機中，導航至包含 `app.py` 的文件夾，並輸入 `python app.py` 來運行程式。
+3. **移動到目標資料夾** 在 Mac 當中找到解壓縮完的資料夾，並在終端機當中輸入 cd，再把檔案夾直接拖拉到終端機中，然後按下 enter ![螢幕錄製 2023-12-21 下午8 25 51_more_compressed](https://github.com/kenkuo86/Apollo_auto_punch-in/assets/30885571/c92d148c-8bea-4b2a-9e45-de3e486af9a3)
+4. **運行程式**：在終端機中，導航至包含 `app.py` 的文件夾，並輸入 `python3 app.py` 來運行程式。
 
 ## 使用方法
 1. 在終端機中執行 `app.py`。
