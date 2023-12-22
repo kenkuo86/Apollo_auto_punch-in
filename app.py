@@ -6,9 +6,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+import getpass
 
 apollo_account = input('請輸入 Apollo 帳號： ')
-apollo_password = input('請輸入 Apollo 密碼： ')
+apollo_password = getpass.getpass('請輸入 Apollo 密碼： ')
 start_date = input('輸入開始打卡日期 (格式：YYYY/MM/DD)： ')
 end_date = input('輸入結束打卡日期 (格式：YYYY/MM/DD)： ')
 
